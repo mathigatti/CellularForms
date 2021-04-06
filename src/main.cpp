@@ -65,8 +65,8 @@ int main() {
         SplitThreshold, LinkRestLength, RadiusOfInfluence,
         RepulsionFactor, SpringFactor, PlanarFactor, BulgeFactor);
 
-    RunGUI(model);
-    // RunForever(model);
+    //RunGUI(model);
+     RunForever(model);
 
     return 0;
 }
