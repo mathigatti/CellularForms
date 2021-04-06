@@ -6,7 +6,8 @@ var zMax = 500.00;
 var sensativity = 4;
 
 function preload() {
-  octahedron = loadModel('cellular_form.obj');
+  texture_sample = loadImage('texture.jpg');
+  model_sample = loadModel('cellular_form.obj');
 }
 
 function setup() {
@@ -14,18 +15,23 @@ function setup() {
 }
 
 function draw() {
-  background(300);
+  background(0);
+  ambientLight(100);
+  directionalLight(70, 250, 200, 0, -2.5,-1.2);
+  ambientMaterial(250);
   rotateX(frameCount * 0.01);
   rotateY(frameCount * 0.01);
   scale(zoom);
-  model(octahedron);
+  normalMaterial(250, 0, 0);
+  texture(texture_sample);
+  model(model_sample);
 }
 
 function keyPressed() {
   if (keyCode === LEFT_ARROW) {
-	zoom -= sensativity;
+  zoom -= sensativity;
   } else if (keyCode === RIGHT_ARROW) {
-	zoom += sensativity;
+  zoom += sensativity;
   }
   zoom = constrain(zoom, zMin, zMax);
 }
