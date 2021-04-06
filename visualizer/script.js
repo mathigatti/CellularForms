@@ -7,7 +7,7 @@ var sensativity = 0.005;
 
 
 function preload() {
-  octahedron = loadModel('out00005000.obj');
+  octahedron = loadModel('cellular_form.obj');
 }
 
 function setup() {
