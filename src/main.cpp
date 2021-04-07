@@ -10,10 +10,8 @@
 void RunForever(Model &model) {
     const auto startTime = std::chrono::steady_clock::now();
     ThreadPool pool;
-    int iterations = 0;
-    while (1) {
+    for (int iterations = 0; iterations <= 15000; iterations++) {
         model.Update(pool);
-        iterations++;
         if (iterations % 1000 == 0) {
             char filename[1024];
             sprintf(filename, "out%08d.stl", iterations);
